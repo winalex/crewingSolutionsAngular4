@@ -1,0 +1,17 @@
+<md-tab-group #mdTabGroup class="nav nav-optionsTabs">
+  <!-- <md-tab  *ngFor="let option of options" [ngClass]="{active : ($index == active), inactive: ($index != active), BoR: $index == identity.details.bidOfRecord-1, notBoR: $index != identity.details.bidOfRecord-1}"> -->
+   <md-tab  *ngFor="let option of options" [ngClass]="{active : ($index == active), inactive: ($index != active), BoR: $index === selectedIndex, notBoR: $index !== selectedIndex}">  
+    <ng-template md-tab-label>
+      The <em>{{option.title}}</em> pasta
+    </ng-template>
+
+  </md-tab>
+ 
+   
+    <!-- <li ng-repeat="pane in panes" ng-class="{active : ($index == active), inactive: ($index != active), BoR: $index == identity.details.bidOfRecord-1, notBoR: $index != identity.details.bidOfRecord-1}" >
+        <a data-toggle="tab" ng-click="onOptionTabChange($index);" data-index="{{$index}}">{{pane.title}}</a>
+        <div ng-show="$index == active" style="position: absolute; right: 10px; top: 10px;"><a class="refreshLink" ng-click="refreshBid()"></a></div>
+        <label class="bidOfRecordTabText" ng-show="$index==identity.details.bidOfRecord-1">BID OF RECORD</label>
+      
+  </li> -->
+</md-tab-group>
